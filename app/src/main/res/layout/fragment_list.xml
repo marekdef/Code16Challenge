@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="mainViewModel"
+            type="pl.senordeveloper.code16challenge.MainViewModel" />
+
+        <variable
+            name="adapter"
+            type="pl.senordeveloper.code16challenge.adapter.UsersAdapter" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mainRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            bind:adapter="@{adapter}"
+            bind:users="@{mainViewModel.users}" />
+
+        <ProgressBar
+            android:id="@+id/mainProgressBar"
+            android:layout_gravity="bottom"
+            android:layout_width="0dp"
+            android:layout_height="4dp"
+            android:indeterminate="true" />
+
+    </FrameLayout>
+
+
+</layout>
